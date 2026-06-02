@@ -174,10 +174,9 @@ trtexec --onnx=models/embedding.onnx --saveEngine=models/embedding.trt --fp16
 
 | Backbone | Loss | Top-1 Acc | Top-5 Acc |
 |----------|------|-----------|-----------|
-| DINOv2 (zero-shot) | — | TBD | TBD |
-| ResNet-50 | Triplet | TBD | TBD |
-| ResNet-50 | ArcFace | TBD | TBD |
+| DINOv2 (zero-shot) | — | 91.22% | 98.91% |
 
+*Total Queries = 8041*
 *Fill in after running `python eval/evaluate.py`*
 
 ---
