@@ -176,7 +176,8 @@ trtexec --onnx=models/embedding.onnx --saveEngine=models/embedding.trt --fp16
 |----------|------|-----------|-----------|
 | DINOv2 (zero-shot) | — | 91.22% | 98.91% |
 
-*Total Queries = 8041*
+Total Queries = 8041
+
 *Fill in after running `python eval/evaluate.py`*
 
 ---
