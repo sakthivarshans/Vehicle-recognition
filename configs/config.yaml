@@ -1,0 +1,33 @@
+model:
+  backbone: "resnet50"          # options: dinov2_vitb14, resnet50, efficientnet_b3
+  embedding_dim: 256
+  pretrained: true
+  weights_path: "models/embedding.pth"
+
+detector:
+  model_path: "yolov8n.pt"
+  confidence_threshold: 0.4
+  vehicle_classes: [2, 5, 7]         # COCO: car=2, bus=5, truck=7
+  device: "cpu"                     # falls back to cpu automatically
+
+database:
+  index_path: "database/vehicle_db.index"
+  metadata_path: "database/metadata.json"
+  similarity_threshold: 0.65
+  top_k: 5
+
+training:
+  dataset_path: "data/stanford_cars"
+  batch_size: 64
+  learning_rate: 0.0001
+  epochs: 30
+  embedding_dim: 256
+  margin: 0.3
+  mining_type: "hard"
+  num_workers: 4
+  save_path: "models/embedding.pth"
+  holdout_classes: 10                # classes held out for unseen-vehicle test
+
+evaluation:
+  results_path: "eval/results.csv"
+  top_k_values: [1, 5]

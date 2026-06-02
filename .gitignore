@@ -1,0 +1,60 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+env/
+.env/
+.venv/
+
+# Model weights (too large for git — use git-lfs or download separately)
+models/*.pth
+models/*.pt
+models/*.onnx
+models/*.trt
+models/*.engine
+
+# Dataset (too large for git)
+data/
+
+# FAISS index and metadata (regenerate with build_db.py)
+database/*.index
+database/metadata.json
+
+# Evaluation outputs
+eval/results.csv
+eval/unseen_demo_results.csv
+eval/holdout_classes.json
+
+# Assets / outputs
+assets/*.jpg
+assets/*.jpeg
+assets/*.png
+assets/*.mp4
+assets/*.avi
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Logs
+*.log
+runs/
