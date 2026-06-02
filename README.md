@@ -172,9 +172,9 @@ trtexec --onnx=models/embedding.onnx --saveEngine=models/embedding.trt --fp16
 
 ## Results
 
-| Backbone | Loss | Top-1 Acc | Top-5 Acc |
-|----------|------|-----------|-----------|
-| DINOv2 (zero-shot) | — | 91.22% | 98.91% |
+| Backbone | Top-1 Acc | Top-5 Acc |
+|----------|-----------|-----------|
+| DINOv2 (zero-shot) | 91.22% | 98.91% |
 
 Total Queries = 8041
 
