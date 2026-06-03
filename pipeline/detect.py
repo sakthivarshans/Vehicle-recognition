@@ -80,19 +80,7 @@ class VehicleDetector:
         detections: List[Dict],
         padding: float = 0.10,
     ) -> List[Image.Image]:
-        """
-        Crop detected vehicle regions from the image.
 
-        Parameters
-        ----------
-        image      : BGR numpy array
-        detections : output of detect()
-        padding    : fractional padding added around each bbox (default 10%)
-
-        Returns
-        -------
-        List of RGB PIL Images, one per detected vehicle.
-        """
         h, w = image.shape[:2]
         crops: List[Image.Image] = []
 
