@@ -27,13 +27,6 @@ logger = logging.getLogger(__name__)
 
 
 class VehicleRecognizer:
-    """
-    End-to-end vehicle recognition pipeline.
-
-    Parameters
-    ----------
-    config_path : path to configs/config.yaml
-    """
 
     def __init__(self, config_path: str = "configs/config.yaml") -> None:
         cfg_path = Path(config_path)
