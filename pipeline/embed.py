@@ -23,13 +23,6 @@ IMAGENET_STD  = [0.229, 0.224, 0.225]
 
 
 class EmbeddingExtractor:
-    """
-    Wraps EmbeddingModel for use in the inference pipeline.
-
-    Parameters
-    ----------
-    config : full config dict loaded from configs/config.yaml
-    """
 
     def __init__(self, config: dict) -> None:
         import sys
@@ -78,17 +71,7 @@ class EmbeddingExtractor:
 
     # ── Core extraction ───────────────────────────────────────────────────────
     def extract(self, pil_images: List[Image.Image]) -> np.ndarray:
-        """
-        Extract embeddings for a batch of PIL Images.
 
-        Parameters
-        ----------
-        pil_images : list of PIL Images
-
-        Returns
-        -------
-        np.ndarray of shape (N, embedding_dim), float32, L2-normalised.
-        """
         if not pil_images:
             return np.zeros((0, self.embedding_dim), dtype=np.float32)
 
@@ -102,13 +85,7 @@ class EmbeddingExtractor:
         return embeddings.cpu().numpy().astype(np.float32)
 
     def extract_single(self, pil_image: Image.Image) -> np.ndarray:
-        """
-        Extract embedding for a single PIL Image.
 
-        Returns
-        -------
-        np.ndarray of shape (1, embedding_dim), float32, L2-normalised.
-        """
         return self.extract([pil_image])
 
     # ── Helpers ───────────────────────────────────────────────────────────────
