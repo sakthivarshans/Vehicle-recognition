@@ -1,13 +1,3 @@
-"""
-pipeline/detect.py
-------------------
-VehicleDetector: detects and crops vehicles from images using YOLOv8.
-
-COCO vehicle classes used:
-  2 = car
-  5 = bus
-  7 = truck
-"""
 
 import logging
 from pathlib import Path
@@ -21,18 +11,7 @@ logger = logging.getLogger(__name__)
 
 
 class VehicleDetector:
-    """
-    YOLOv8-based vehicle detector.
 
-    Parameters
-    ----------
-    model_path         : path to YOLO weights file (e.g. 'yolov8n.pt').
-                         If the file does not exist, ultralytics will
-                         automatically download it on first run.
-    confidence_threshold : minimum detection confidence (0–1)
-    vehicle_classes    : list of COCO class IDs to keep
-    device             : 'cuda' or 'cpu'
-    """
 
     def __init__(
         self,
@@ -61,17 +40,7 @@ class VehicleDetector:
         )
 
     def detect(self, image: np.ndarray) -> List[Dict]:
-        """
-        Detect vehicles in an image.
 
-        Parameters
-        ----------
-        image : BGR numpy array (OpenCV format), shape (H, W, 3)
-
-        Returns
-        -------
-        List of dicts: {"bbox": [x1,y1,x2,y2], "confidence": float, "class_id": int}
-        """
         h, w = image.shape[:2]
         results = self.model(
             image,
